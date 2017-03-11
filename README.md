@@ -25,11 +25,9 @@ Development mode:
 docker run -d \
     -p 5000:5000 \
     -e FLASK_DEBUG=1 \
-    -e FLASK_APP=/srv/platonix/server.py \
     --name platonix \
     -v $PWD:/srv/platonix \
-    platonix \
-    flask run --host=0.0.0.0
+    platonix
 ```
 
 ## API

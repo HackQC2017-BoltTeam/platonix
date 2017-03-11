@@ -10,7 +10,8 @@ RUN apt-get update && \
     apt-get clean
 
 ENV LC_ALL=C.UTF-8 \
-    LANG=C.UTF-8
+    LANG=C.UTF-8 \
+    FLASK_APP=/srv/platonix/server.py
 
 COPY requirements.txt requirements.txt
 
@@ -20,4 +21,4 @@ RUN pip3 install -r requirements.txt && \
 
 COPY server.py server.py
 
-CMD ["python3", "/srv/platonix/server.py"]
+CMD ["flask", "run", "--host=0.0.0.0"]
